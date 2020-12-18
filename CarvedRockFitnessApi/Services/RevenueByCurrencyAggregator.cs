@@ -22,8 +22,8 @@ namespace CarvedRockFitnessApi.Services
             var revenueInCurrencyList = new List<RevenueInCurrency>();
             foreach (Currency currency in Enum.GetValues(typeof(Currency)))
             {
-               
-                
+                if (currency != Currency.Unknown)
+                {
                     var currencyOrderValue = 0m;
 
                     if (orderValueByCurrency.ContainsKey(currency))
@@ -32,7 +32,7 @@ namespace CarvedRockFitnessApi.Services
                     }
 
                     revenueInCurrencyList.Add(new RevenueInCurrency(currency, currencyOrderValue));
-                
+                }
             }
 
             return revenueInCurrencyList;
