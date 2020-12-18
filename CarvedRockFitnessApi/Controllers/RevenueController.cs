@@ -21,5 +21,5 @@ namespace CarvedRockFitnessApi.Controllers
         {
             return this.revenueByCurrencyAggregator.GetRevenueByCurrency();
         }
-    }
+    } 
 }
